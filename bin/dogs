@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require './lib/dogs'
+Dogs::CLI.new.call
+
+
+puts "hi"
