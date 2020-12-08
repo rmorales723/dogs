@@ -1,33 +1,26 @@
-class Dog
-attr_accessor :dog, :breed, :bio, :dog
+class Dog::DogBio
+attr_accessor :breed, :bio, :url
 @@all = []
 
-def initialize(breed, name, bio, dog)
-    @breed = breed
-    @name = name
-    @bio = bio
-    @dog = dog
-    @@all = all
-end
-
-def all
-    @@all << self
-end
-
-def self.list
-    self.scrape_dogs
-    dogs = []
-    dogs << self.scrape_shepherd
-    dogs << self.scrape_rottweiler
-    dogs << self.scrape_dane
-    dogs
-end
-
-def bark
-    puts "RUFF! RUFF!"
+    def initialize(breed,bio, url)
+        @breed = breed
+        @bio = bio
+        @@all = all
+        @url = url
+        @@all << self
     end
 
-def display
-    puts "I am of #{@breed} breed!"
+    def self.list
+        @@all
     end
+
+
+    #def
+        #self.scrape_dogs
+        #dogs = []
+        #dogs << self.scrape_shepherd
+        #dogs << self.scrape_rottweiler
+        #dogs << self.scrape_dane
+        #dogs
+    #end
 end
