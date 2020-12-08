@@ -1,40 +1,85 @@
-#!/usr/bin/env ruby
 require 'pry'
-class Dogs::CLI
+class Dogs::CLI   
 
-
-def call
-    list_dogs
-    menu
-end
-
-def list_dogs
-    puts "Welcome to Dog_Breeds, a tool to learn more about a particular Breed of Dog that you might be interested in."
-    puts "I hope you find a Dog that you might be interested in!"
-    puts "List of Dogs"
-    @dogs = Dogs::DogBreed.list
-    @dogs.each.with_index(1) do |dog, i|
-    puts "#{i}. #{dog.breed}"
+    def call
+        list_dogs
+        menu
     end
 
+    def list_dogs
+        puts "List of Dogs!"
+        @dogs = Dog::DogBio.all
+        @dogs.each.with_index(1) do |dog, i|
+        puts "#{i}. #{dog.breed}"
+    end
+end
+    
+    def list_bios 
+        puts "All Dog Bios"
+        @dogs = Dog::DogScraper.list 
+        @dogs.each.with_index(1) do |dog, i|
+        puts "#{i}. #{dog.breed}, #{dog.bio}"
+     end
+end
+    
+    def shepherd_bio
+        puts "German Shepherd Bio"
+        @dogs = Dog::DogScraper.list 
+        @dogs.select.with_index(1) do |dog, i|
+            if i == 1
+                puts "#{dog.bio}"
+        end
+    end
+end   
+
+    def rottweiler
+        puts "Rottweiler Bio"
+        @dogs = Dog::DogScraper.list 
+        @dogs.select.with_index(1) do |dog, i|
+            if i == 2
+                puts "#{dog.bio}"
+        end        
+    end
+end
+
+    def rottweiler
+        puts "Great Dane Bio"
+        @dogs = Dog::DogScraper.list 
+        @dogs.select.with_index(1) do |dog, i|
+            if i == 3
+                puts "#{dog.bio}"
+         end
+    end
+end
+
+    def goodbye
+        puts "Thanks for stopping by... More Dogs to arrive soon!"
+end
+
+    
 def menu
-    input = nil
-    while input != "exit"
-    puts "Type 'List' to see a list of Dogs." "Type 'Breed' to list a particular breed of dog you`d like to see." "If you`d like to exit please type 'Exit'."
-    input = gets.chomp.downcase
-binding.pry
-    if input.to_i > 0
-    x = @dogs[input.to_i-1]
-    puts "#{x.breed}"
-    elsif input.downcase == "list"
-    list_breed
-    elsif input.downcase == "breed"
-    list_dogs
-    elsif input.downcase == "exit"
-    goodbye
-    binding.pry
-    else
-    puts "Invalid input." "Type 'List' to see the list of Dogs again!"
+            input = nil
+        while input != "exit"
+            puts "Enter the Dog you`d like more info on:"
+            input = gets.chomp.downcase
+
+        if input.to_i > 0
+            dog = @dogs[input.to_i-1]
+            puts "#{dog.breed}"
+        elsif input.downcase == "German shepherd"
+            shepherd_bio
+        elsif input.downcase == "Rottweiler"
+            rottweiler_bio
+        elsif input.downcase == "Great Dane"
+            dane_bio
+        elsif input.downcase == "bio"
+            list_bios
+        elsif input.downcase == "list"
+            list_dogs
+        elsif input.downcase == "exit"
+            goodbye
+        else
+            puts "Huh? I don`t understand. Please type 'list' to see the list of Dogs again."
         end
     end
 end
