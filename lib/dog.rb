@@ -1,26 +1,24 @@
-class Dog::DogBio
-attr_accessor :breed, :bio, :url
+ require_relative '../config/environment'
+ require_relative '../lib/cli'
+
+class Dog
+attr_accessor :name, :breed, :bio, :img, :size, :height, :weight, :coat, :energy, :activities
 @@all = []
 
-    def initialize(breed,bio, url)
+    def self.all
+        @@all
+end
+    def initialize(breed, bio, img, size, height, weight, coat, energy, activities)
+        @name = name 
         @breed = breed
         @bio = bio
-        @@all = all
-        @url = url
+        @img = img
+        @size = size
+        @height = height
+        @weight = weight
+        @coat = coat
+        @energy = energy
+        @activities = activities
         @@all << self
     end
-
-    def self.list
-        @@all
-    end
-
-
-    #def
-        #self.scrape_dogs
-        #dogs = []
-        #dogs << self.scrape_shepherd
-        #dogs << self.scrape_rottweiler
-        #dogs << self.scrape_dane
-        #dogs
-    #end
 end
