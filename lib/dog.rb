@@ -2,14 +2,13 @@
  require_relative '../lib/cli'
 
 class Dog
-attr_accessor :name, :breed, :bio, :img, :size, :height, :weight, :coat, :energy, :activities
+attr_accessor :breed, :bio, :img, :size, :height, :weight, :coat, :energy, :activities
 @@all = []
 
     def self.all
         @@all
 end
     def initialize(breed, bio, img, size, height, weight, coat, energy, activities)
-        @name = name 
         @breed = breed
         @bio = bio
         @img = img
@@ -22,3 +21,4 @@ end
         @@all << self
     end
 end
+
