@@ -22,14 +22,6 @@ class CLI
     end
 end
 
-    def list_bios 
-    puts "All Dog Bios"
-    @dogs = Scraper.list
-    @dogs.each.with_index(1) do |dog, i|
-      puts "#{i}. #{dog.breed}, #{dog.bio}"
-    end
-end
-
 def goodbye 
     puts ""
         puts "*|*----------------------------------------*|*"
