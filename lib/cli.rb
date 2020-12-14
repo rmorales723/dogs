@@ -8,7 +8,7 @@ class CLI
     def call
         puts ""
 		puts "*|*----------------------------------------*|*"
-		puts "             *** List of Dogs! *** 		    "
+		puts "                 *** List of Dogs! *** 		    "
         puts "*|*----------------------------------------*|*"
         Scraper.scrape_dogs
         list_dogs
@@ -51,7 +51,7 @@ end
     def menu
         input = nil
         while input != "exit"
-            puts "Enter the Dog you`d like more info on, or enter 'Exit' to leave the app."
+            puts "Enter the Dog you`d like more info on, or type 'List' to see the list of Dogs again. Enter 'Exit' to leave the app."
             input = gets.chomp.downcase
             if input.to_i > 0 && input.to_i < 4
                 dog = @dogs[input.to_i-1]
@@ -62,7 +62,6 @@ end
                 puts "#{dog.coat}"
                 puts "#{dog.energy}"
                 puts "#{dog.activities}"
-            
             elsif input.downcase == "list"
                 list_dogs
             elsif input.downcase == "exit"
