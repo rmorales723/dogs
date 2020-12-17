@@ -1,23 +1,14 @@
-# dogs
-breeds of dogs
-MIT License
+Gather the dog breed you might be interested in, with the help of scraping of real time data using Nokogiri to display data about a specific dog and breed.
 
-Copyright (c) [2020] [robert_morales]
+Introductory about the repository:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+it`s quite simple. We first display a list of dogs, we then return the choice of dog and breed to the user with information, and data pertaining to the selected choice.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[rmorales723]/dogs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[rmorales723]/dogs/blob/master/CODE_OF_CONDUCT.md).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
+
+Everyone interacting in the dogs project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[rmorales723]/dogs/blob/master/CODE_OF_CONDUCT.md).

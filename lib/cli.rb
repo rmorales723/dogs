@@ -11,16 +11,9 @@ class CLI
 		puts "                 *** List of Dogs! *** 		    "
         puts "*|*----------------------------------------*|*"
         Scraper.scrape_dogs
-        list_dogs
+        Dog.display_grid_of_breeds
         menu
     end
-
-    def list_dogs
-        @dogs = Dog.all
-        @dogs.each.with_index(1) do |dog, i|
-            puts "#{i}. #{dog.breed}"
-    end
-end
 
 def goodbye 
     puts ""
@@ -53,20 +46,16 @@ end
         while input != "exit"
             puts "Enter the Dog you`d like more info on, or type 'List' to see the list of Dogs again. Enter 'Exit' to leave the app."
             input = gets.chomp.downcase
-            if input.to_i > 0 && input.to_i < 4
-                dog = @dogs[input.to_i-1]
-                puts "#{dog.breed}"
-                puts "#{dog.size}"
-                puts "#{dog.height}"
-                puts "#{dog.weight}"
-                puts "#{dog.coat}"
-                puts "#{dog.energy}"
-                puts "#{dog.activities}"
+            if input.to_i > 0 && input.to_i < Dog.all.length
+                dog = @dogs [input.to_i-1]
+                Scraper.scrape_breed(dog)
+                dog.display_data
             elsif input.downcase == "list"
                 list_dogs
             elsif input.downcase == "exit"
                 goodbye
-            else   puts "I don`t understand. Please type 'list' to see the list of Dogs again, and choose a dog from number 1-3."
+            else   
+                puts "I don`t understand. Please type 'list' to see the list of Dogs again, and choose a dog from number 1-3."
             end
         end
     end
