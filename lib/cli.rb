@@ -47,11 +47,11 @@ end
             puts "Enter the Dog you`d like more info on, or type 'List' to see the list of Dogs again. Enter 'Exit' to leave the app."
             input = gets.chomp.downcase
             if input.to_i > 0 && input.to_i < Dog.all.length
-                dog = @dogs [input.to_i-1]
+                dog = Dog.all[input.to_i-1]
                 Scraper.scrape_breed(dog)
                 dog.display_data
             elsif input.downcase == "list"
-                list_dogs
+                Dog.display_grid_of_breeds
             elsif input.downcase == "exit"
                 goodbye
             else   
