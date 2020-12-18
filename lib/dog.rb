@@ -37,11 +37,11 @@ end
         puts dogs_table.render(:unicode)
     end
 
-    def self.breed_information
-        dogs_table = TTY::Table.new(header: ["Id", "Breed"])
-        all.each.with_index(1) do |dog, i|
-        dogs_table << ["#{i}".red, "#{self.table}"]
+    def self.display_of_data
+        display_data = TTY::Table.new(header: ["Id", "Breed"])
+        #all.each.with_index(1) do |dog, i| 
+            display_data << ["#{i}".red, "#{dog.breed}"]
         end
-       puts dogs_table.render(:unicode)
+        puts display_data.render(:unicode)
+        end
     end
-end
