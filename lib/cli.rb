@@ -55,7 +55,7 @@ end
             elsif input.downcase == "exit"
                 goodbye
             else   
-                puts "I don`t understand. Please type 'list' to see the list of Dogs again, and choose a dog from number 1-3."
+                puts "I don`t understand. Please type 'list' to see the list of Dogs again, and choose a dog from number 1-12."
             end
         end
     end
