@@ -49,9 +49,8 @@ end
                 dog = Dog.all[input.to_i-1]
                 Scraper.scrape_breed(dog)
                 dog.display_data
-                Dog.display_breed_information
             elsif input.downcase == "list"
-                Dog.display_grid_of_breeds
+                Dog.String.display_grid_of_breeds
             elsif input.downcase == "exit"
                 goodbye
             else   
