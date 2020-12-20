@@ -22,11 +22,11 @@ end
     def display_data
         puts "#{self.breed.red}"
         puts "#{self.size.white}"
-        puts "#{self.height.blue}"
-        puts "#{self.weight}"
-        puts "#{self.coat}"
-        puts "#{self.energy}"
-        puts "#{self.activities}"
+        puts "#{self.height.white}"
+        puts "#{self.weight.blue}"
+        puts "#{self.coat.blue}"
+        puts "#{self.energy.yellow}"
+        puts "#{self.activities.yellow}"
     end
 
     def self.display_grid_of_breeds
