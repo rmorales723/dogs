@@ -4,7 +4,6 @@ require_relative '../config/environment'
 
 
 class CLI
-
     def call
         puts ""
 		puts "*|*----------------------------------------*|*"
@@ -50,13 +49,13 @@ end
                 dog = Dog.all[input.to_i-1]
                 Scraper.scrape_breed(dog)
                 dog.display_data
+                Dog.display_breed_information
             elsif input.downcase == "list"
                 Dog.display_grid_of_breeds
             elsif input.downcase == "exit"
                 goodbye
             else   
                 puts "I don`t understand." 
-                puts "Please type 'list' to see the list of Dogs again."
             end
         end
     end
