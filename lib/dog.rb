@@ -21,8 +21,8 @@ end
 
     def display_data
         puts "#{self.breed.red}"
-        puts "#{self.size}"
-        puts "#{self.height}"
+        puts "#{self.size.white}"
+        puts "#{self.height.blue}"
         puts "#{self.weight}"
         puts "#{self.coat}"
         puts "#{self.energy}"
