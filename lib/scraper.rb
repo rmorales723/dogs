@@ -14,7 +14,7 @@ URL = "https://www.purina.com/dogs/dog-breeds"
       
         def self.scrape_breed(dog)
             doc = Nokogiri::HTML(open("https://www.purina.com/dogs/dog-breeds/#{dog.breed.downcase.gsub(" ", "-")}"))
-            # breed = doc.search("#mainContent > div > div > div > div.statsDef-content > dl > dt").text.strip.gsub(/\s+/,' ')
+            breed = doc.search("#mainContent > div > div > div > div.statsDef-content > dl > dt").text.strip.gsub(/\s+/,' ')
             bio = doc.search("#mainContent > div.layer.mix-bkgColor_light.layer_collapseTop > div > div > p").text.strip.gsub(/\s+/,' ')  
             img = doc.search("#mainContent > div > div > div > div.statsDef-media > img").text.strip.gsub(/\s+/,' ') 
             size = doc.search("#mainContent > div > div > div > div.statsDef-content > dl > dd:nth-child(2)").text.strip.gsub(/\s+/,' ')

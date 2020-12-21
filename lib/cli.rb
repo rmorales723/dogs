@@ -43,12 +43,14 @@ end
     def menu
         input = nil
         while input != "exit"
-            puts "Enter the Dog you`d like more info on, or type 'List' to see the list of Dogs again. Enter 'Exit' to leave the app."
+            puts "Enter the Dog you`d like more info on, or type 'List' to see the list of Dogs again. Enter 'Exit' to leave the app.".green
             input = gets.chomp.downcase
             if input.to_i > 0 && input.to_i < Dog.all.length
                 dog = Dog.all[input.to_i-1]
                 Scraper.scrape_breed(dog)
                 dog.display_data
+            elsif  input.to_i > 0 && input.to_i < Dog.all.length
+                dog.display_breed
             elsif input.downcase == "list"
                 Dog.String.display_grid_of_breeds
             elsif input.downcase == "exit"
