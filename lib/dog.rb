@@ -23,22 +23,14 @@ end
         puts "#{self.breed.red}"
         puts "#{self.size.white}"
         puts "#{self.height.white}"
-        puts "#{self.weight.blue}"
-        puts "#{self.coat.blue}"
-        puts "#{self.energy.yellow}"
-        puts "#{self.activities.yellow}"
+        puts "#{self.weight.white}"
+        puts "#{self.coat.white}"
+        puts "#{self.energy.white}"
+        puts "#{self.activities.white}"
     end
 
     def self.display_grid_of_breeds
         dogs_table = TTY::Table.new(header: ["Id", "Breed"])
-        all.each.with_index(1) do |dog, i| 
-            dogs_table << ["#{i}".red, "#{dog.breed}"]
-        end
-        puts dogs_table.render(:unicode)
-    end
-
-    def self.display_breed
-        dogs_table = TTY::Table.new
         all.each.with_index(1) do |dog, i| 
             dogs_table << ["#{i}".red, "#{dog.breed}"]
         end
