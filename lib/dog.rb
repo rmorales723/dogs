@@ -36,4 +36,11 @@ end
         end
         puts dogs_table.render(:unicode)
     end
+
+    #write class method find_by_name that takes 1 arguemnt of breed we want to find, and returns the breed we found if we found it or nil if nothing was found.
+    def self.class_find_by_name(breed)
+        self.all.find do |dog|
+             dog.breed == breed 
+        end
+    end
 end
