@@ -10,7 +10,7 @@ class CLI
 		puts "                 *** List of Dogs! *** 		    "
         puts "*|*----------------------------------------*|*"
         Scraper.scrape_dogs
-        Dog.class_find_by_name("Akita")
+        Dog.class_find_by_name(" ")
         Dog.display_grid_of_breeds
         menu
     end
